@@ -24,4 +24,15 @@ def wanted(string):
             return False    
     return True
 
-	
+def US_region(member):
+    if member['STATE'] in ['WA', 'OR', 'CA', 'NV', 'ID', 'MT', 'WY', 'UT', 'AZ', 'CO', 'NM', 'AK', 'HI']:
+        return "West"
+    elif member['STATE'] in ['ND', 'SD', 'NE', 'KS', 'MN', 'IA', 'MO', 'WI', 'IL', 'IN', 'MI', 'OH']:
+        return "Midwest"
+    elif member['STATE'] in ['TX', 'OK', 'AR', 'LA', 'KY', 'TN', 'MS', 'AL', 'WV', 'MD', 'DC', 'DE', 'VA', 'NC', 'SC', 'GA', 'FL']:
+        return "South"
+    elif member['STATE'] in ['PA', 'NJ', 'NY', 'CT', 'RI', 'MA', 'VT', 'NH', 'ME']:
+        return "Northeast"
+    else:
+        return member['STATE']
+

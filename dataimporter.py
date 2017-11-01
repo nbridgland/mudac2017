@@ -157,6 +157,11 @@ def members_training_variables(members, rxdata, medical_wanted):
         members.at[dummy.index[k], 'medicalcost'] = dummy.iat[k]
         
     #all potentially completely useless
+    members['minrxday'] = 0.0
+    members['minmedicalday'] = 0.0
+    members['maxrxday'] = 0.0
+    members['maxmedicalday'] = 0.0
+
     dummy = rxdata.groupby('PATID')['DAYS_FROM_DIAG'].min()
     for k in range(len(dummy)):
         members.at[dummy.index[k], 'minrxday'] = dummy.iat[k]
